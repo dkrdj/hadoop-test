@@ -140,7 +140,7 @@ public class WordCount extends Configured implements Tool {
 ////                FSDataOutputStream outputStream = fs.create(outFile);
 ////                outputStream.write(localBuffer.array());
 ////                outputStream.close();
-                context.write(key, new Text(ip.getHostAddress()));
+                context.write(key, new Text(ip.getHostName()));
             }
         }
     }
