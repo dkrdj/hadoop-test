@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="hadoop-test" default="package">
+<project name="hadoop-test" default="tonemate-works">
 
     <!-- Load all the default properties, and any the user wants    -->
     <!-- to contribute (without having to type -D or edit this file -->
@@ -62,7 +62,7 @@
     <target name="tonemate-works" depends="compile-works">
         <jar jarfile="test.jar" basedir="${build.works}">
             <manifest>
-                <attribute name="Main-Class" value="${works.dir}/Driver"/>
+                <attribute name="Main-Class" value="ssafy/Driver"/>
             </manifest>
         </jar>
     </target>
