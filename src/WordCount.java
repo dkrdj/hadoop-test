@@ -1,6 +1,5 @@
 package ssafy;
 
-import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -16,7 +15,6 @@ import org.apache.hadoop.util.ToolRunner;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Arrays;
-import java.util.Map;
 
 public class WordCount extends Configured implements Tool {
 
@@ -35,11 +33,7 @@ public class WordCount extends Configured implements Tool {
             System.exit(2);
         }
         System.err.println(Arrays.toString(args));
-        Configuration conf = getConf();
-        for (Map.Entry<String, String> entry : conf) {
-            System.err.println(entry.getKey() + " " + entry.getValue());
-        }
-        Job job = Job.getInstance(conf);
+        Job job = Job.getInstance(getConf());
         job.setJarByClass(WordCount.class);
 
         // let hadoop know my map and reduce classes
